@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from logic import run_analysis
+from .logic import run_analysis
 from mangum import Mangum
 
 app = FastAPI(title="Portfolio Risk API")
@@ -30,5 +30,6 @@ def run_analysis_endpoint():
 def root():
     return {"message": "API is running"}
 handler = Mangum(app)
+
 
 
