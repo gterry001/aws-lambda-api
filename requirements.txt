@@ -11,8 +11,9 @@ arcticdb
 scipy
 fredapi
 ta
-hyperliquid-python
+hyperliquid-python-sdk
 https://github.com/rongardF/tvdatafeed/archive/refs/heads/master.zip
 magnum
+
 
 
