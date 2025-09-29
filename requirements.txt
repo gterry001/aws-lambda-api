@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+pydantic
+requests
+pandas
+numpy
+plotly
+tqdm
+vectorbt
+arcticdb
+scipy
+fredapi
+ta
+hyperliquid
+https://github.com/rongardF/tvdatafeed/archive/refs/heads/master.zip
+magnum
+
