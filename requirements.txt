@@ -14,6 +14,8 @@ ta
 hyperliquid-python-sdk
 https://github.com/rongardF/tvdatafeed/archive/refs/heads/master.zip
 mangum
+openpyxl
+
 
 
 
