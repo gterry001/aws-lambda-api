@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from .logic import run_analysis
 from mangum import Mangum
+from pathlib import Path
 
 app = FastAPI(title="Portfolio Risk API")
 
@@ -17,7 +18,12 @@ app.add_middleware(
 )
 
 # Carpeta de estáticos
-app.mount("/static", StaticFiles(directory="static"), name="static")
+BASE_DIR = Path(__file__).resolve().parent
+app.mount(
+    "/static",
+    StaticFiles(directory=BASE_DIR / "static"),
+    name="static"
+)
 
 @app.get("/run-analysis")
 def run_analysis_endpoint():
@@ -30,6 +36,7 @@ def run_analysis_endpoint():
 def root():
     return {"message": "API is running"}
 handler = Mangum(app)
+
 
 
 
