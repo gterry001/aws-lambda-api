@@ -225,7 +225,7 @@ def get_historical_klines_tv(symbol, tv_symbol, exchange, n_bars=6000, last_pric
 
 #############DOWNLOAD DATA#########################
 
-def download_data(portfolio_path: str = "portfolio.xlsx"):
+def download_data(portfolio_path: str = "app/portfolio.xlsx"):
     portfolio = pd.read_excel(portfolio_path)
     
     tv_data = [
@@ -668,6 +668,7 @@ def run_analysis(portfolio_path="portfolio.xlsx"):
         "ordenes": [],   # aquí si quieres añadir lógica para órdenes
         "plot_file": plot_file
     }
+
 
 
 
