@@ -16,7 +16,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+print("Mounting.... /")
 # Carpeta de estáticos
 BASE_DIR = Path(__file__).resolve().parent
 app.mount(
@@ -34,8 +34,10 @@ app.mount(
 #    }
 @app.get("/")
 def root():
+    print("Exexuting...")
     return {"message": "API is running"}
 handler = Mangum(app)
+
 
 
 
