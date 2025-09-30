@@ -2,3 +2,4 @@ pandas
 mangum
 fastapi
 uvicorn[standard]
+openpyxl
