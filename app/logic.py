@@ -12,6 +12,8 @@ from hyperliquid.utils import constants
 # built-in functions
 info = Info(base_url=constants.MAINNET_API_URL, skip_ws=True)
 meta, ctxs = info.meta_and_asset_ctxs()
+BASE_DIR = Path(__file__).resolve().parent
+print(BASE_DIR)
 def hyperliquid_price(coin):
     try:
         idx = next(i for i, asset in enumerate(meta['universe']) if asset['name'] == coin)
@@ -660,14 +662,15 @@ def generate_plots(portfolio, df_betas):
 
     return filename
 
-def run_analysis(portfolio_path="app/portfolio.xlsx"):
-    portfolio, dfs = download_data(portfolio_path)
+def run_analysis():
+    portfolio, dfs = download_data(BASE_DIR+"/portfolio.xlsx")
     risk_factors, df_betas = compute_risk_factors(dfs, portfolio)
     plot_file = generate_plots(portfolio, df_betas)
     return {
         "ordenes": [],   # aquí si quieres añadir lógica para órdenes
         "plot_file": plot_file
     }
+
 
 
 
