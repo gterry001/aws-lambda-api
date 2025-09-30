@@ -660,7 +660,7 @@ def generate_plots(portfolio, df_betas):
 
     return filename
 
-def run_analysis(portfolio_path="portfolio.xlsx"):
+def run_analysis(portfolio_path="app/portfolio.xlsx"):
     portfolio, dfs = download_data(portfolio_path)
     risk_factors, df_betas = compute_risk_factors(dfs, portfolio)
     plot_file = generate_plots(portfolio, df_betas)
@@ -668,6 +668,7 @@ def run_analysis(portfolio_path="portfolio.xlsx"):
         "ordenes": [],   # aquí si quieres añadir lógica para órdenes
         "plot_file": plot_file
     }
+
 
 
 
