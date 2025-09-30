@@ -19,17 +19,18 @@ app.add_middleware(
 # Carpeta de estáticos
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get("/run-analysis")
-def run_analysis_endpoint():
-    result = run_analysis()
-    return {
-        "ordenes": result["ordenes"],
-        "grafico_url": f"/static/{result['plot_file']}"
-    }
+#@app.get("/run-analysis")
+#def run_analysis_endpoint():
+#    result = run_analysis()
+#    return {
+#        "ordenes": result["ordenes"],
+#        "grafico_url": f"/static/{result['plot_file']}"
+#    }
 @app.get("/")
 def root():
     return {"message": "API is running"}
 handler = Mangum(app)
+
 
 
 
