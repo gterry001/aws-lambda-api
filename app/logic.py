@@ -9,6 +9,8 @@ from plotly.subplots import make_subplots
 from tvDatafeed import TvDatafeed, Interval
 from hyperliquid.info import Info
 from hyperliquid.utils import constants
+import os
+print("Contenido de /var/task/app:", os.listdir(BASE_DIR))
 # built-in functions
 info = Info(base_url=constants.MAINNET_API_URL, skip_ws=True)
 meta, ctxs = info.meta_and_asset_ctxs()
@@ -670,6 +672,7 @@ def run_analysis():
         "ordenes": [],   # aquí si quieres añadir lógica para órdenes
         "plot_file": plot_file
     }
+
 
 
 
