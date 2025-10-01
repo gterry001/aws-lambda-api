@@ -230,8 +230,8 @@ def get_historical_klines_tv(symbol, tv_symbol, exchange, n_bars=6000, last_pric
 
 #############DOWNLOAD DATA#########################
 
-def download_data(portfolio_path: str = "app/portfolio.xlsx"):
-    portfolio = pd.read_excel(portfolio_path,engine="openpyxl")
+def download_data(portfolio_path: str = "app/portfolio.csv"):
+    portfolio = pd.read_csv(portfolio_path)
     
     tv_data = [
     ['AERO', 'AEROUSDT', 'BYBIT'],
@@ -666,13 +666,14 @@ def generate_plots(portfolio, df_betas):
     return filename
 
 def run_analysis():
-    portfolio, dfs = download_data("portfolio.xlsx")
+    portfolio, dfs = download_data("portfolio.csv")
     risk_factors, df_betas = compute_risk_factors(dfs, portfolio)
     plot_file = generate_plots(portfolio, df_betas)
     return {
         "ordenes": [],   # aquí si quieres añadir lógica para órdenes
         "plot_file": plot_file
     }
+
 
 
 
